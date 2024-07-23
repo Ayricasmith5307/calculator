@@ -27,6 +27,7 @@ function handleKeyPress(e){
     }
 
     if (operation.length === 0 && key === '-') {
+        operation += key
         input.innerHTML = operation
         return
     }
@@ -37,6 +38,7 @@ function handleKeyPress(e){
     }
 
     if (operators.indexOf(lastChar) !== -1 && operators.indexOf(key) !== -1){
+        operation = operation.replace(/.$/, key)
        input.innerHTML = operation
        return
     }
